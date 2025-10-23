@@ -54,7 +54,7 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: alacritty" { spawn-sh "alacritty"; }
-    MOD+D                           hotkey-overlay-title="Open App Launcher: wofi" { spawn-sh "wofi"; }
+    MOD+D                           hotkey-overlay-title="Open App Launcher: wofi" { spawn-sh "fuzzel"; }
     MOD+B                               hotkey-overlay-title="Open Browser: helium" { spawn-sh "helium-browser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     
@@ -184,11 +184,11 @@ binds {
 // ────────────── Startup Applications ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
-    spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
-    spawn-sh-at-startup "swww-daemon" // Wallpaper daemon
-    spawn-sh-at-startup "swww img /home/andre/Pictures/wallpaper/sadam.png" // Set wallpaper
-    spawn-sh-at-startup "waybar" // Launch waybar
-    spawn-sh-at-startup "kanshi"
+  //  spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
+   // spawn-sh-at-startup "swww-daemon" // Wallpaper daemon
+   // spawn-sh-at-startup "swww img /home/andre/Pictures/wallpaper/sadam.png" // Set wallpaper
+   spawn-sh-at-startup "kanshi"
+    spawn-sh-at-startup "quickshell --config simple-bar" // Launch waybar
 
     prefer-no-csd // Disable program decorations
     screenshot-path null // Disable screenshot saving
@@ -285,3 +285,9 @@ binds {
     hotkey-overlay {
         skip-at-startup
     }
+    
+    gestures {
+  hot-corners {
+    off
+  }
+}
